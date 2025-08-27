@@ -35,3 +35,46 @@ function addBinary(a: string, b: string): string {
 // Repeating until no carry remains.
 
 // Converting the result back to a binary string with .toString(2).
+
+
+// 1. Convert Binary Strings to BigInt
+// 
+// let num1 = BigInt("0b" + a);
+// let num2 = BigInt("0b" + b);
+// "0b" tells JavaScript to treat the string as binary.
+
+// BigInt allows you to work with numbers of any size, beyond the 53-bit limit of regular number types.
+
+// 2. Bitwise Addition Loop
+// 
+// while (num2 !== 0n) {
+// This loop continues until there's no carry left (num2 becomes 0n).
+
+// 3. Calculate Carry
+// 
+// let carry = num1 & num2;
+// & finds where both bits are 1 — that’s where a carry will happen.
+
+// 4. Add Without Carry
+// 
+// num1 = num1 ^ num2;
+// ^ (XOR) adds bits without carry:
+
+// 1 ^ 1 = 0
+
+// 1 ^ 0 = 1
+
+// 0 ^ 0 = 0
+
+// 5. Shift Carry Left
+// 
+// num2 = carry << 1n;
+// Carry affects the next higher bit, so we shift it left by one.
+
+// 6. Repeat Until Carry is Gone
+// The loop continues, updating num1 and num2 until num2 is 0n.
+
+// 7. Convert Result Back to Binary String
+// 
+// return num1.toString(2);
+// Converts the final result from BigInt back to a binary string.
