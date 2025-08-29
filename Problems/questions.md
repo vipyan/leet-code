@@ -2,7 +2,7 @@
 
 **Difficulty:** Easy  
 **Topics:** Heap, Simulation  
-**Companies:** [Premium Lock]
+
 
 ## Problem Statement
 
